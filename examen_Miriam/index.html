@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+  <link rel="stylesheet" href="./css/style.css">
+  <link rel="shortcut icon" href="./img/icon.jpg" type="image/x-icon">
+  
+  <title>Examen</title>
+</head>
+<body>
+  <section class="form-login" style="display: block;">
+    <h5>Log In</h5>
+    <input class="correousado" type="text" name="usuario" value="" placeholder="Email" autofocus>
+    <input class="contraseñausado" type="password" name="contrasena" value="" placeholder="Contraseña">
+    <a onclick="iniciar();">
+    <input class="buttons" type="submit" name="" value="Ingresar">
+    </a>
+    <a onclick="guard();">
+      <input class="buttons" type="submit" name="" value="Registrar">
+    </a>
+    <p>Iniciar Sesión con:</p>
+
+    <a onclick="Google();">
+      <input class="buttons" type="submit" value="Google" id="google">
+      </a>
+    <a onclick="Facebook();">
+    <input class="buttons" type="submit" value="Facebook" id="facebook">
+    </a>
+    <a onclick="Yahoo();">
+      <input class="buttons" type="submit" value="Yahoo" id="yahoo">
+      </a>
+    <a onclick="Github();">
+    <input class="Github" type="submit" value="Github" id="github">
+    </a>
+  </section>
+  <section class="form-register" style="display: none;">
+    <h4>Registro</h4>
+    <input class="correo" type="email" name="correo" id="correo" placeholder="Email">
+    <input class="contraseña" type="password" name="password" id="password" placeholder="Contraseña">
+    <a onclick="reg ();">
+    <input class="botons" type="submit" value="Registrar">
+    </a>
+    <a onclick="back();">
+      <input class="botons" type="submit" value="Volver">
+      </a>
+  </section>
+  <div class="form-db" style="display: none;">
+    <h1>Base de Datos</h1>
+  <div class="container ">
+    <div class="d-flex justify-content-center h-100">
+      <div class="col-md-6">
+        <div class="card">
+          <div class="card-body">
+            <form id="task-form">
+              <div class="form-group">
+                <input type="text" id="task-title" class="form-control" class="Task Title" placeholder="Título"
+                  autofocus>
+              </div>
+              <div class="form-group">
+                <textarea id="task-description" rows="3" class="form-control" placeholder="Detalles"></textarea>
+              </div>
+              <div>
+              <button class="btn btn-primary" id="btn-task-form">
+                Añadir
+              </button>
+              <a onclick="salir();">
+              <button type="button" class="btn btn-primary" id="btn-exit">
+                Cerrar Sesión
+              </button>
+              </a>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+      <!-- Tasks List -->
+      <div class="col-md-6" id="tasks-container"></div>
+    </div>
+  </div>
+  </div>
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-app.js"></script>
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-analytics.js"></script>
+<!-- Add Firebase products that you want to use -->
+<script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-auth.js"></script>
+<!-- Use Firestore -->
+<script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-firestore.js"></script>
+<script src="./js/index.js"></script>
+</body>
+</html>
