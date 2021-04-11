@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+  	<meta name="description" content="Free Web tutorials">
+  	<meta name="author" content="Miriam Andrade">
+  	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  		<link rel="stylesheet" type="text/css" href="css/style.css">
+			<title>Práctica 3</title>
+	<!--Made with love by Mutiullah Samim -->
+
+
+   <!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-app.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-analytics.js"></script>
+
+
+	<!--Bootsrap 4 CDN-->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    
+    <!--Fontawesome CDN-->
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+</head>
+
+	<body>
+
+		<header>
+			<ul class="nav">
+				<li id="login" style="display: none;">Login</li>
+				<li id="signin" style="display: none;">Sign In</li>
+			</ul>
+		</header>
+
+<div class="container">
+	<div class="d-flex justify-content-center h-100">
+		<div class="card">
+			<div class="card-header">
+				<h3>Registro</h3>
+				<div class="d-flex justify-content-end social_icon">
+
+						<span  id="facebook" ><i class="fab fa-facebook-square"></i></span>
+					
+
+					
+						<span  id="google" ><i class="fab fa-google-plus-square"></i></span>
+						
+				</div>
+			</div>
+			<div class="card-body">
+				<form>
+					<div class="input-group form-group">
+						<div class="input-group-prepend">
+							<span class="input-group-text"><i class="fas fa-user"></i></span>
+						</div>
+						<input type="email" id="email" class="form-control" placeholder="email">
+						
+					</div>
+
+					<div class="input-group form-group">
+						<div class="input-group-prepend">
+							<span class="input-group-text"><i class="fas fa-key"></i></span>
+						</div>
+						<input type="password" id="password" class="form-control" placeholder="password">
+					</div>
+
+						<button id="button_SignIn" class="btn float-right login_btn">Sign Up</button>
+
+					<section id="db" style="display: none;">
+						<div id="content_crud">Hola Soy el contenido</div>
+					</section>
+				</form>
+			</div>
+	<div class="card-footer">
+
+ <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-app.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+     
+<script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-analytics.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-auth.js"></script>
+<script src="./js/index.js"></script>
+
+</body>
+</html>
