@@ -15,21 +15,17 @@
   let db = firebase.firestore();
   //BotonRegistrar
   var Register= document.querySelector(".boton");
-  var firebaseR=
-  document.querySelector("buttons");
+  var firebaseR = document.querySelector("buttons");
   //Correo
-  var firebaseEmail=
-  document.querySelector(".correo");
-  var firebaseE=
-  document.querySelector(".correousado");
+  var Email = document.querySelector(".correo");
+  var Eus = document.querySelector(".correousado");
   //Contraseña
-  var firebasePassword=
-  document.querySelector(".contraseña");
-  var firebaseP=
-  document.querySelector(".contraseñausado");
+  var Password = document.querySelector(".contraseña");
+  var Passwordus = document.querySelector(".contraseñausado");
+
   //Registrar
 function reg(){
-    firebase.auth().createUserWithEmailAndPassword(firebaseEmail.value, firebasePassword.value)
+    firebase.auth().createUserWithEmailAndPassword( Email.value, Password.value)
   .then((user) => {
     // Signed in
     alert("Bienvenido");
@@ -45,7 +41,8 @@ function reg(){
   });
 }
 
-//Logear con Google
+
+
 function Google(provider) {
   var provider = new firebase.auth.GoogleAuthProvider();
   // [START auth_google_signin_popup]
@@ -75,12 +72,12 @@ function Google(provider) {
       // ...
     });
 }
-//Logear con Facebook
+
+
 function Facebook(provider) {
   var provider = new firebase.auth.FacebookAuthProvider();
   // [START auth_facebook_signin_popup]
-  firebase
-    .auth()
+  firebase.auth()
     .signInWithPopup(provider)
     .then((result) => {
       /** @type {firebase.auth.OAuthCredential} */
@@ -109,7 +106,8 @@ function Facebook(provider) {
       // ...
     });
 }
-//Logear con Yahoo
+
+
   function Yahoo(provider) {
     var provider = new firebase.auth.OAuthProvider('yahoo.com');
     // [START auth_yahoo_signin_popup]
@@ -134,12 +132,12 @@ function Facebook(provider) {
       });
     // [END auth_yahoo_signin_popup]
   }
-//Logear con Github
+
+
 function Github(provider) {
   var provider = new firebase.auth.GithubAuthProvider();
   // [START auth_github_signin_popup]
-  firebase
-    .auth()
+  firebase.auth()
     .signInWithPopup(provider)
     .then((result) => {
       /** @type {firebase.auth.OAuthCredential} */
@@ -155,7 +153,8 @@ function Github(provider) {
       dat.style.display="block";
       entrar.style.display="none";
       // ...
-    }).catch((error) => {
+    })
+    .catch((error) => {
       // Handle Errors here.
       var errorCode = error.code;
       var errorMessage = error.message;
@@ -167,39 +166,37 @@ function Github(provider) {
     });
   // [END auth_github_signin_popup]
 }
-//Logear con Twitter
+
 function Twitter(provider) {
   var provider = new firebase.auth.TwitterAuthProvider();
   // [START auth_twitter_signin_popup]
-  firebase
-    .auth()
-    .signInWithPopup(provider)
-    .then((result) => {
-      /** @type {firebase.auth.OAuthCredential} */
-      var credential = result.credential;
-      alert("Bienvenido");
-      dat.style.display="block";
-      entrar.style.display="none";
-      // This gives you a the Twitter OAuth 1.0 Access Token and Secret.
-      // You can use these server side with your app's credentials to access the Twitter API.
-      var token = credential.accessToken;
-      var secret = credential.secret;
+  firebase.auth()
+  .signInWithPopup(provider)
+  .then((result) => {
+    /** @type {firebase.auth.OAuthCredential} */
+    var credential = result.credential;
 
-      // The signed-in user info.
-      var user = result.user;
-      // ...
-    }).catch((error) => {
-      // Handle Errors here.
-      var errorCode = error.code;
-      var errorMessage = error.message;
-      // The email of the user's account used.
-      var email = error.email;
-      // The firebase.auth.AuthCredential type that was used.
-      var credential = error.credential;
-      // ...
-    });
+    // This gives you a the Twitter OAuth 1.0 Access Token and Secret.
+    // You can use these server side with your app's credentials to access the Twitter API.
+    var token = credential.accessToken;
+    var secret = credential.secret;
+
+    // The signed-in user info.
+    var user = result.user;
+    // ...
+  }).catch((error) => {
+    // Handle Errors here.
+    var errorCode = error.code;
+    var errorMessage = error.message;
+    // The email of the user's account used.
+    var email = error.email;
+    // The firebase.auth.AuthCredential type that was used.
+    var credential = error.credential;
+    // ...
+  });
   // [END auth_twitter_signin_popup]
 }
+
 let guardar=
 document.querySelector(".form-register");
 let entrar=
@@ -217,7 +214,7 @@ function back(){
 //Acceso a usuarios existentes
 function iniciar() {
   // [START auth_signin_password]
-  firebase.auth().signInWithEmailAndPassword(firebaseE.value, firebaseP.value)
+  firebase.auth().signInWithEmailAndPassword( Eus.value, Passwordus.value)
     .then((userCredential) => {
       // Signed in
       entrar.style.display="none";
@@ -234,7 +231,7 @@ function iniciar() {
   // [END auth_signin_password]
 }
 //Observador
-function Wachador() {
+function Observador() {
   // [START auth_state_listener]
   firebase.auth().onAuthStateChanged((user) => {
     if (user) {
@@ -251,7 +248,7 @@ function Wachador() {
   });
   // [END auth_state_listener]
 }
-Wachador();
+Observador();
 function salir() {
   // [START auth_sign_out]
   firebase.auth().signOut().then(() => {
