@@ -14,17 +14,19 @@
   firebase.analytics();
   let db = firebase.firestore();
   //BotonRegistrar
-  var Register= document.querySelector(".boton");
-  var firebaseR = document.querySelector("buttons");
+  let Register= document.querySelector(".boton");
+  let firebaseR = document.querySelector("buttons");
   //Correo
-  var Email = document.querySelector(".correo");
-  var Eus = document.querySelector(".correousado");
+  let Email = document.querySelector(".correo");
+  let Eus = document.querySelector(".correousado");
   //Contraseña
-  var Password = document.querySelector(".contraseña");
-  var Passwordus = document.querySelector(".contraseñausado");
+  let Password = document.querySelector(".contraseña");
+  let Passwordus = document.querySelector(".contraseñausado");
+
+  let registrar = document.querySelector("#registrar")
 
   //Registrar
-function reg(){
+registrar.addEventListener("click", ()=>{
     firebase.auth().createUserWithEmailAndPassword( Email.value, Password.value)
   .then((user) => {
     // Signed in
@@ -39,11 +41,15 @@ function reg(){
     var errorMessage = error.message;
     // ..
   });
-}
+});
 
+let google = document.querySelector("#google");
+let facebook = document.querySelector("#facebook");
+let twitter = document.querySelector("#twitter");
+let yahoo = document.querySelector("#yahoo");
+let github = document.querySelector("#github");
 
-
-function Google(provider) {
+google.addEventListener("click", ()=>{
   var provider = new firebase.auth.GoogleAuthProvider();
   // [START auth_google_signin_popup]
   firebase.auth()
@@ -71,10 +77,10 @@ function Google(provider) {
       var credential = error.credential;
       // ...
     });
-}
+});
 
 
-function Facebook(provider) {
+facebook.addEventListener("click", ()=>{
   var provider = new firebase.auth.FacebookAuthProvider();
   // [START auth_facebook_signin_popup]
   firebase.auth()
@@ -105,10 +111,10 @@ function Facebook(provider) {
 
       // ...
     });
-}
+});
 
 
-  function Yahoo(provider) {
+ yahoo.addEventListener("click", ()=>{
     var provider = new firebase.auth.OAuthProvider('yahoo.com');
     // [START auth_yahoo_signin_popup]
     firebase.auth().signInWithPopup(provider)
@@ -131,10 +137,10 @@ function Facebook(provider) {
         // Handle error.
       });
     // [END auth_yahoo_signin_popup]
-  }
+  });
 
 
-function Github(provider) {
+github.addEventListener("click", ()=>{
   var provider = new firebase.auth.GithubAuthProvider();
   // [START auth_github_signin_popup]
   firebase.auth()
@@ -165,9 +171,9 @@ function Github(provider) {
       // ...
     });
   // [END auth_github_signin_popup]
-}
+});
 
-function Twitter(provider) {
+twitter.addEventListener("click", ()=>{
   var provider = new firebase.auth.TwitterAuthProvider();
   // [START auth_twitter_signin_popup]
   firebase.auth()
@@ -195,14 +201,13 @@ function Twitter(provider) {
     // ...
   });
   // [END auth_twitter_signin_popup]
-}
+});
 
-let guardar=
-document.querySelector(".form-register");
-let entrar=
-document.querySelector(".form-login");
-let dat=
-document.querySelector(".form-db");
+let guardar = document.querySelector(".form-register");
+let entrar = document.querySelector(".form-login");
+let dat = document.querySelector(".form-db");
+let ingresar = document.querySelector("ingresar");
+
 function guard(){
   guardar.style.display="block";
   entrar.style.display="none";
@@ -211,8 +216,9 @@ function back(){
   guardar.style.display="none"
   entrar.style.display="block"
 }
+
 //Acceso a usuarios existentes
-function iniciar() {
+ingresar.addEventListener("click", ()=>{
   // [START auth_signin_password]
   firebase.auth().signInWithEmailAndPassword( Eus.value, Passwordus.value)
     .then((userCredential) => {
@@ -229,7 +235,8 @@ function iniciar() {
       var errorMessage = error.message;
     });
   // [END auth_signin_password]
-}
+});
+
 //Observador
 function Observador() {
   // [START auth_state_listener]
