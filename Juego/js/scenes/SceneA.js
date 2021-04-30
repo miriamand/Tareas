@@ -15,13 +15,11 @@ class SceneA extends Phaser.Scene
 
     create ()
     {
-        this.add.image(500, 400, 'fondo');
+        this.add.image(400, 300, 'fondo');
 
         this.hsv = Phaser.Display.Color.HSVColorWheel();
         //  Rainbow Text
-        this.text1 = this.add.text(300, 250, 'Comenzar', { font: "50px Arial Black", fill: "#fff" });
-        this.text1.setStroke('#00f', 16);
-        this.text1.setShadow(2, 2, "#333333", 2, true, true);
+        this.text1 = this.add.text(250, 150, 'Comenzar', { font: "50px Arial Black"});
 
         this.input.on('pointerdown', function () {
             this.cameras.main.fadeOut(100, 0, 0, 0);

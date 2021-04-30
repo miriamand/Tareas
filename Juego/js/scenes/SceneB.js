@@ -7,12 +7,12 @@ class SceneB extends Phaser.Scene {
 
      preload ()
 {
-    this.load.image('sky', 'assets/sea.png');
+    this.load.image('sky', 'assets/fondo.jpg');
     this.load.image('ground', 'assets/base.png');
-    this.load.image('star', 'assets/dimond.png');
+    this.load.image('star', 'assets/diamond.png');
     this.load.image('bomb', 'assets/star.png');
     this.load.spritesheet('dude', 
-        'assets/ghost.png',
+        'assets/mpam.png',
         { frameWidth: 32, frameHeight: 48 }
     );
 }
@@ -35,7 +35,7 @@ this.player.setBounce(0.2);
 this.player.setCollideWorldBounds(true);
 this.anims.create({
     key: 'left',
-    frames: this.anims.generateFrameNumbers('dude', { start: 0, end: 3 }),
+    frames: this.anims.generateFrameNumbers('dude', { start: 0, end: 2 }),
     frameRate: 10,
     repeat: -1
 });
@@ -140,9 +140,7 @@ this.physics.add.overlap(this.player, this.stars, this.collectStar, null, this);
 
     this.gameOver = true;
 
-    this.text1 = this.add.text(300, 250, 'Perdiste', { font: "50px Arial Black", fill: "#fff" });
-    this.text1.setStroke('#00f', 16);
-        this.text1.setShadow(2, 2, "#333333", 2, true, true);
+   
 }
 }
 export default SceneB;
